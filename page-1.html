@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Ayleen Bahamondez</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/2.0.4/p5.min.js"></script>
+</head>
+<body id="cuerpo">
+  <main id="bloque">
+    <img src="monti2.jpg" alt="Monti con peluche" class="avatar">
+    <h1>🐭 intentemos que funcione</h1>
+    <h2>Yo soy Ayleen Bahamondez</h2>
+    <p>✨ Aquí Monti me acompaña mientras experimento con interacción y movimiento.</p>
+    
+    <p>Esta es mi cuarta prueba de <a href="https://github.com/Ayleenba23" target="_blank">Introducción al Desarrollo Web desde el Diseño</a>.</p>
+    <p>Aquí puedes ver otro ejemplo en acción con <code>p5.js</code> 🎨:</p>
+
+    <nav>
+      <a href="index.html">🏠 Portada</a>
+      <a href="page-1.html" class="active">🐭 Primera parte</a>
+      <a href="page-2.html">🌈 Segunda parte</a>
+    </nav>
+
+    <p>👉 En esta página un emoji 🐭 sigue al mouse con un efecto de retardo (usando <code>lerp()</code>).</p>
+  </main>
+
+  <script>
+  // Ejemplo p5.js basado en "Easing" visto en clases
+  let x = 0;
+  let y = 0;
+  let easing = 0.05;
+
+  function setup() {
+    createCanvas(windowWidth, windowHeight).parent("cuerpo").style('z-index','-1');
+    textSize(48);
+  }
+
+  function draw() {
+    background(0, 50);
+    let targetX = mouseX;
+    let dx = targetX - x;
+    x += dx * easing;
+
+    let targetY = mouseY;
+    let dy = targetY - y;
+    y += dy * easing;
+
+    fill(255);
+    text("🐭", x, y);
+  }
+
+  function windowResized() {
+    resizeCanvas(windowWidth, windowHeight);
+  }
+  </script>
+</body>
+</html>

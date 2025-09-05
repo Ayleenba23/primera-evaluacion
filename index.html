@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Ayleen Bahamondez</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/2.0.4/p5.min.js"></script>
+</head>
+<body id="cuerpo">
+  <main id="bloque">
+    <!-- Avatar -->
+    <img src="monti1.jpg" alt="Monti jugando" class="avatar">
+    <!-- Títulos -->
+    <h1>🌟 ¡Holii quiero titularme! 🌟</h1>
+    <h2>Me llamo <a href="https://github.com/Ayleenba23" target="_blank">Ayleen Bahamondez</a></h2>
+    <p>✨ Estudio diseño, me gusta experimentar con modelos 3d y adoro a mi perro Monti 🐶</p>
+    
+    <!-- Introducción -->
+    <p>Esta es mi cuarta prueba de <a href="https://github.com/Ayleenba23" target="_blank">Introducción al Desarrollo Web desde el Diseño</a>, un Optativo de Profundización de la <a href="https://diseno.uc.cl/" target="_blank">Escuela de Diseño UC</a>.</p>
+    <p>Aquí puedes echarle un vistazo a las páginas que preparé usando <code>HTML</code>, <code>CSS</code> y <code>p5.js</code> 🎨:</p>
+            <!--no sigas editando desde acá-->
+    
+    <!-- Navegación -->
+    <nav>
+      <a href="index.html" class="active">🏠 Portada</a>
+      <a href="page-1.html">🐭 Primera parte</a>
+      <a href="page-2.html">🌈 Segunda parte</a>
+    </nav>
+    
+    <p>En la portada puedes ver un <code>circle()</code> con un radio aleatorio que sigue el mouse 🖱️ (ejemplo basado en <b>p5.js → Drawing</b>).</p>
+  </main>
+
+  <script>
+  // Ejemplo de p5.js - Círculo siguiendo al mouse con tamaño aleatorio
+  let canvas;
+  function setup() {
+    canvas = createCanvas(windowWidth, windowHeight);
+    canvas.parent("cuerpo");
+    canvas.position(0,0);
+    canvas.style('z-index','-1');
+    background(0);
+  }
+  function draw() {
+    noStroke();
+    fill(random(255), random(255), random(255), 150);
+    circle(mouseX, mouseY, random(10,50));
+  }
+  function windowResized() {
+    resizeCanvas(windowWidth, windowHeight);
+  }
+  </script>
+</body>
+</html>

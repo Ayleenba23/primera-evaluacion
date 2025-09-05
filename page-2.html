@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Ayleen Bahamondez</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/2.0.4/p5.min.js"></script>
+</head>
+<body id="cuerpo">
+  <main id="bloque">
+    <img src="monti.jpg" alt="Monti con abrigo" class="avatar">
+    <h1>🌈 baia baia</h1>
+    <h2>Experimentando 🎨</h2>
+    <p>✨ Aquí probamos colores dinámicos y Monti es mi inspiración 🐶</p>
+    
+    <p>Esta es mi cuarta prueba<a href="https://github.com/Ayleenba23" target="_blank">Introducción al Desarrollo Web desde el Diseño</a>.</p>
+    <p>Este ejemplo se basa en <code>p5.js → Color → Hue Saturation Brightness</code>.</p>
+
+    <nav>
+      <a href="index.html">🏠 Portada</a>
+      <a href="page-1.html">🐭 Primera parte</a>
+      <a href="page-2.html" class="active">🌈 Segunda parte</a>
+    </nav>
+
+    <p>👉 El fondo cambia según la posición del mouse 🎨</p>
+  </main>
+
+  <script>
+  function setup() {
+    createCanvas(windowWidth, windowHeight).parent("cuerpo").style('z-index','-1');
+    colorMode(HSB, 360, 100, 100);
+  }
+
+  function draw() {
+    let h = map(mouseX, 0, width, 0, 360);
+    let s = map(mouseY, 0, height, 100, 0);
+    background(h, s, 100);
+  }
+
+  function windowResized() {
+    resizeCanvas(windowWidth, windowHeight);
+  }
+  </script>
+</body>
+</html>
